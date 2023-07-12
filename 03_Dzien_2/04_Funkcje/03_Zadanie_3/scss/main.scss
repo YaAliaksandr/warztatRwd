@@ -1,0 +1,12 @@
+@use "sass:math";
+
+$variable: 200;
+
+@function func($val) {
+	@return math.percentage($val/100);
+}
+
+
+p {
+	font-size: func($variable);
+}

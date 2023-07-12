@@ -1,0 +1,23 @@
+@mixin setTooltip ($text, $bgColor) {
+	&::after {
+		content: $text;
+		position: absolute;
+		border: 1px solid green;
+		background-color: $bgColor;
+		font-size: 8px;
+		right: 35%;
+		bottom: 26%;
+	}
+}
+
+.list {
+	li {
+
+
+		&:hover {
+			position: relative;
+			@include setTooltip("YES", gray);
+		}
+	}
+
+}

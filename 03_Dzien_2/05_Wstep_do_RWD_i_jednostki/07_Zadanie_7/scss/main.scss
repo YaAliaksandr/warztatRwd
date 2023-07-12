@@ -1,0 +1,14 @@
+.images {
+	width: 80%;
+	border: 3px solid red;
+
+}
+
+.img_one {
+	min-height: 100px;
+	background-size: cover;
+	background-position: center;
+	border: 2px solid yellow;
+	background-image: url("../images/cat.jpg");
+	width: 30%;
+}

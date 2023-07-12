@@ -1,0 +1,57 @@
+@mixin fRal ($font-S, $font-W, $line-H) {
+	font-family: "Raleway", sans-serif;
+	font-size: calc($font-S/$bfs)+rem;
+
+	@if $font-W =="light" {
+		font-weight: 300;
+	}
+
+	@else if $font-W =="regular" {
+		font-weight: 400;
+	}
+
+	@else if $font-W =="bold" {
+		font-weight: 700;
+	}
+
+	@else if $font-W =="extrabold" {
+		font-weight: 800;
+	}
+
+	@else {
+		font-weight: $font-W;
+	}
+
+	line-height: calc($line-H/$font-S);
+
+	@content;
+}
+
+
+@mixin fOpS($font-S, $font-W, $line-H) {
+	font-family: "Open Sans", sans-serif;
+	font-size: calc($font-S/$bfs)+rem;
+
+	@if $font-W =="light" {
+		font-weight: 300;
+	}
+
+	@else if $font-W =="regular" {
+		font-weight: 400;
+	}
+
+	@else if $font-W =="semibold" {
+		font-weight: 600;
+	}
+
+	@else if $font-W =="bold" {
+		font-weight: 700;
+	}
+
+	@else {
+		font-weight: $font-W;
+	}
+
+	line-height: calc($line-H/$font-S);
+	@content;
+}

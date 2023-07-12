@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.board {
+  background: #000 url("board-bg.f26ac6a6.jpg") bottom;
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=index.0709491e.css.map */

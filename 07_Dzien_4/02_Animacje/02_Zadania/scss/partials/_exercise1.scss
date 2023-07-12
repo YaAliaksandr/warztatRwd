@@ -1,0 +1,121 @@
+@use "sass:math";
+
+.exercise1 {
+	display: flex;
+}
+
+.test {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+	flex-grow: 1;
+}
+
+.test1 {
+	background: #FF6347;
+}
+
+.test2 {
+	background: #9370DB;
+}
+
+.test3 {
+	background: #00FA9A;
+}
+
+@keyframes jump {
+	0% {}
+
+	25% {
+		height: 55px;
+		border-radius: 30px;
+	}
+
+	50% {
+		transform: translateY(63px);
+		height: 35px;
+		border-radius: 50%;
+	}
+
+	75% {
+		height: 55px;
+		border-radius: 30px;
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.loading1 {
+	width: 50px;
+	height: 100px;
+	border: 1px solid white;
+	border-radius: 30px;
+	padding-block: 5px;
+
+	.circle {
+		width: 35px;
+		height: 35px;
+		margin-inline: auto;
+		border-radius: 50%;
+		background-color: white;
+		animation: jump 2s infinite ease-in-out;
+	}
+
+}
+
+@keyframes rot {
+	to {
+		transform: rotate(360deg);
+	}
+
+}
+
+.loading2 {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	border-left: 3px solid rgba(255, 255, 255, 0.5);
+	border-right: 3px solid rgba(255, 255, 255, 1);
+	border-top: 3px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+	animation: rot 0.7s infinite linear;
+}
+
+
+@keyframes spanResize {
+	from {
+		height: 78px;
+	}
+
+	to {
+		height: 10px
+	}
+
+}
+
+.loading3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 2px;
+
+	>span {
+		// display: block;
+		width: 7px;
+		height: 78px;
+		background-color: white;
+		border-radius: 3px;
+		// animation: spanResize 1s infinite alternate;
+	}
+
+	@for $i from 1 to 6 {
+		>span:nth-child(#{$i}) {
+			animation: spanResize 0.7s #{$i}00ms ease-in-out infinite alternate;
+		}
+
+	}
+
+}

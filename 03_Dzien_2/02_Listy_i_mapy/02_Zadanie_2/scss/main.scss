@@ -1,0 +1,18 @@
+@use "sass:map";
+
+$colors: (
+	"color1":red,
+	"color2":green,
+	"color3":blue,
+	"color4":yellow,
+	"color5":gray
+);
+
+body {
+	background-color: map.get($colors, "color5");
+	color: map.get($colors, "colors4");
+}
+
+.menu {
+	background-color: map.get($colors, "color3");
+}

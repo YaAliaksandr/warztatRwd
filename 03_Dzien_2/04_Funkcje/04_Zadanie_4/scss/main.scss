@@ -1,0 +1,12 @@
+@use "sass:color";
+
+@function colorResult($color-1, $color-2) {
+	@return color.mix($color-1, $color-2 , 50%);
+}
+
+$val-1: red;
+$val-2: blue;
+
+p {
+	background-color: colorResult($val-1, $val-2);
+}

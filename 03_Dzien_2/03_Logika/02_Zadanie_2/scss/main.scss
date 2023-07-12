@@ -1,0 +1,26 @@
+@mixin drowItem ($shape, $color) {
+	& {
+		background-color: $color;
+	}
+
+	@if $shape ==circle {
+
+
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		// background-color: $color;
+	}
+
+	@else if $shape ==rectangle {
+		width: 200px;
+		height: 200px;
+		// background-color: $color;
+	}
+}
+
+
+.draw-container {
+	@include drowItem(rectangle, red);
+
+}

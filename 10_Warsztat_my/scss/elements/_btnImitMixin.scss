@@ -1,0 +1,14 @@
+@mixin btn($bgcolor, $colorText, $height, $width, $border-r) {
+	margin-inline: auto;
+
+	background-color: $bgcolor;
+	color: $colorText;
+	height: calc($height/$bfs)+rem;
+	width: calc($width/$bfs)+rem;
+	border-radius: calc($border-r/$bfs)+rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@content;
+}

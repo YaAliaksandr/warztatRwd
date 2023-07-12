@@ -1,0 +1,75 @@
+header {
+	width: 100%;
+	height: calc(70/$bfs)+rem;
+	box-shadow: 0px calc(3/$bfs)+rem calc(6/$bfs)+rem #00000029;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	// text-align: center;
+}
+
+.container {
+	max-width: 1352px;
+	// margin-inline: calc(136/$bfs)+rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header {
+
+
+
+	height: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	// align-items: center;
+
+
+
+
+	.logo {
+
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		@include fRal(32, 300, 37) {
+			color: $color-primary;
+		}
+	}
+}
+
+.header__nav {
+	// border: 2px solid blue;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: calc(95/$bfs)+rem;
+
+	li {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-inline: calc(12/$bfs)+rem;
+
+		@include fOpS(11, 700, 15) {
+			color: $color-grey;
+			letter-spacing: calc(3.28/$bfs)+rem;
+		}
+
+
+		&:hover {
+			color: $color-black;
+			border-bottom: calc(4/$bfs)+rem solid $color-primary;
+		}
+	}
+
+}
+
+
+.header__nav-bar {
+	height: 100%
+}

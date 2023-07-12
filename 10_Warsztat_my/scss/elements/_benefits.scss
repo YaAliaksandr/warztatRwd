@@ -1,0 +1,217 @@
+.benefits {
+	background-color: $color-grey;
+	padding-block: 106px;
+
+
+	&__container {
+		padding-inline: 100px;
+	}
+
+
+
+	.benefits__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 35px;
+
+		&.one {
+			background-color: $color-white;
+			border: 1px solid $color-grey;
+			border-radius: 5px;
+		}
+
+		&.twice {
+			margin-bottom: 0;
+
+
+			.benefits-item__text {
+				box-sizing: content-box;
+				max-width: 554px;
+				background-color: $color-white;
+				border: 1px solid $color-grey;
+				align-self: stretch;
+				margin: 0;
+				border-radius: 5px;
+				padding-block: 75px;
+				padding-inline: 35px;
+			}
+
+			>.benefits-item__picture.trumpet {
+
+				// box-sizing: content-box;
+				background-color: $color-green;
+				border: 1px solid $color-grey;
+				border-radius: 5px;
+				align-self: stretch;
+				flex: 1 1 auto;
+				margin-left: 50px;
+
+				img {
+					width: 296px;
+					// margin-inline: 62px 81px;
+					// margin-block: 98px 64px;
+				}
+
+				&::after {
+					display: inline;
+				}
+			}
+		}
+
+
+		/*calc(5/$bfs)+rem;*/
+
+
+		.benefits-item__text {
+			// padding: 35px 169px 141px 91px;
+			text-align: left;
+			align-self: center;
+			margin: 90px 35px;
+			max-width: 415px;
+
+			>h2 {
+				@include fRal(36, "regular", 42);
+				padding-bottom: 30px;
+			}
+
+			>p {
+				@include fOpS(16, "regular", 22);
+				display: flex;
+				flex-direction: column;
+
+				&::after {
+					content: "";
+					display: inline-block;
+					width: 78%;
+					/*от ширины p*/
+					height: 4px;
+					/*calc(4/$bfs)+rem;*/
+					margin-top: 50px;
+					/*calc(50/$bfs)+rem*/
+				}
+
+				&.line-primary {
+					&::after {
+						background-color: $color-primary;
+					}
+				}
+
+				&.line-red {
+					&::after {
+						background-color: $color-redish;
+					}
+				}
+
+				&.line-green {
+					&::after {
+						background-color: $color-green;
+					}
+				}
+			}
+		}
+
+		.benefits-item__picture {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				height: auto;
+				z-index: 2;
+			}
+
+			&::after {
+				position: absolute;
+				content: "";
+				display: inline-block;
+			}
+
+		}
+
+		.benefits-item__picture.macbook {
+			margin-right: 117px;
+			margin-block: 113px 38px;
+
+			img {
+				width: 386px;
+			}
+
+			&::after {
+				width: 170px; // 170px =44% от iширины img = 386 px
+				height: 170px; // 170px =78%высоты img = 218 px
+				background-color: $color-redish;
+				border-radius: 41px;
+				transform: rotate(45deg);
+				left: calc(38% + calc(170px/2));
+				bottom: 38%;
+			}
+		}
+
+		.benefits-item__picture.iphone {
+
+			margin-left: 70px;
+			margin-block: 29px 13px;
+
+			img {
+				width: 426px;
+			}
+
+			&::after {
+				width: 320px; // 320px =75% от iширины img = 426 px
+				height: 320px; // 320px =97.5%высоты img = 328 px
+				background-color: $color-primary;
+				border-radius: 50%;
+				left: 1%;
+				bottom: 8%;
+			}
+		}
+
+	}
+
+	// .benefits__item.twice {
+	// 	column-gap: 101px;
+
+	// 	.benefits-item__text {
+	// 		border: 1px solid black;
+	// 		border-radius: 4px;
+	// 		align-self: stretch;
+	// 		background-color: $color-white;
+
+	// 		// padding-block: auto;
+	// 		>h2 {
+	// 			padding-top: 70px;
+	// 		}
+	// 	}
+
+	// 	.benefits-item__picture {
+	// 		border: 1px solid black;
+	// 		border-radius: 4px;
+
+
+	// 		img {
+	// 			width: 296px;
+	// 		}
+
+	// 		&.trumpet {
+	// 			margin-inline: 63px 82px;
+	// 			margin-block: 98px 65px;
+	// 		}
+	// 	}
+
+
+	// }
+
+	.benefits__item.reverse {
+		flex-direction: row-reverse;
+
+		.benefits-item__text {
+			margin-block: 69px 71px;
+			margin-inline: 20px;
+
+		}
+	}
+
+
+}

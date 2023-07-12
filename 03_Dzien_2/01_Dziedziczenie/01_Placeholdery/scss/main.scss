@@ -1,0 +1,60 @@
+%clearfix {
+	&::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
+%block {
+	height: 200px;
+	width: 100%;
+	border: 1px solid lightslategray;
+}
+
+
+.test-mixin {
+	border: 2px solid red;
+	@extend %clearfix;
+}
+
+.success {
+	@extend %block;
+	background-color: lightgoldenrodyellow;
+}
+
+.error {
+	@extend %block;
+	background-color: lightpink;
+}
+
+.info {
+	@extend %block;
+	background-color: lightskyblue;
+}
+
+.container {
+	border: 2px solid blue;
+	// width: 100px;
+	// height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 20px;
+	padding: 20px;
+}
+
+.left_box {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+.right_box {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	float: right;
+}

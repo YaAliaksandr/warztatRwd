@@ -1,0 +1,176 @@
+// Если с поьощью Grid
+// .grid {
+// 	display: grid;
+// 	grid-template-columns: repeat(12, minmax(0, 1fr));
+// 	column-gap: 0;
+// 	list-style-type: none;
+// }
+
+// @for $i from 1 to 14 {
+// 	.start-#{$i} {
+// 		grid-column-start: $i;
+// 	}
+
+// 	.end-#{$i} {
+// 		grid-column-end: $i;
+// 	}
+
+// 	.span-#{$i} {
+// 		grid-column-start: span $i;
+// 	}
+
+// 	.order-#{$i} {
+// 		order: $i;
+// 	}
+// }
+
+// @for $i from 1 to 14 {
+// 	@media (max-width: 992px) {
+// 		.start-md-#{$i} {
+// 			grid-column-start: $i;
+// 		}
+
+// 		.end-md-#{$i} {
+// 			grid-column-end: $i;
+// 		}
+
+// 		.span-md-#{$i} {
+// 			grid-column-start: span $i;
+// 		}
+
+// 		.order-md-#{$i} {
+// 			order: $i;
+// 		}
+// 	}
+// }
+
+// @for $i from 1 to 14 {
+// 	@media (max-width: 780px) {
+// 		.start-mss-#{$i} {
+// 			grid-column-start: $i;
+// 		}
+
+// 		.end-mss-#{$i} {
+// 			grid-column-end: $i;
+// 		}
+
+// 		.span-mss-#{$i} {
+// 			grid-column-start: span $i;
+// 		}
+
+// 		.order-mss-#{$i} {
+// 			order: $i;
+// 		}
+// 	}
+// }
+
+// @for $i from 1 to 14 {
+// 	@media (max-width: 700px) {
+// 		.start-ms-#{$i} {
+// 			grid-column-start: $i;
+// 		}
+
+// 		.end-ms-#{$i} {
+// 			grid-column-end: $i;
+// 		}
+
+// 		.span-ms-#{$i} {
+// 			grid-column-start: span $i;
+// 		}
+
+// 		.order-ms-#{$i} {
+// 			order: $i;
+// 		}
+// 	}
+// }
+
+// @for $i from 1 to 14 {
+// 	@media (max-width: 560px) {
+// 		.start-sm-#{$i} {
+// 			grid-column-start: $i;
+// 		}
+
+// 		.end-sm-#{$i} {
+// 			grid-column-end: $i;
+// 		}
+
+// 		.span-sm-#{$i} {
+// 			grid-column-start: span $i;
+// 		}
+
+// 		.order-sm-#{$i} {
+// 			order: $i;
+// 		}
+// 	}
+// }
+
+// @for $i from 1 to 14 {
+// 	@media (max-width: 370px) {
+// 		.start-xs-#{$i} {
+// 			grid-column-start: $i;
+// 		}
+
+// 		.end-xs-#{$i} {
+// 			grid-column-end: $i;
+// 		}
+
+// 		.span-xs-#{$i} {
+// 			grid-column-start: span $i;
+// 		}
+
+// 		.order-xs-#{$i} {
+// 			order: $i;
+// 		}
+// 	}
+// }
+
+// .gap {
+// 	row-gap: 20px;
+// 	column-gap: 20px;
+
+// 	@media only screen and (max-width: 992px) {
+// 		column-gap: 10px;
+// 	}
+
+// 	@media screen and (min-width: $xxl) {
+// 		row-gap: clamp(15px, 1.04vw, 20px);
+// 		column-gap: clamp(15px, 1.04vw, 20px);
+// 	}
+// }
+
+
+// .no-gap {
+// 	grid-gap: 0;
+// 	column-count: 0;
+// }
+
+
+//  Если с помощью Flex
+@use 'sass:math';
+
+.container {
+	width: 100%;
+	max-width: 990px;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+
+		$columns: 12;
+		$column-base-width: math.div(100%, $columns);
+
+		@for $i from 1 through $columns {
+			.col-#{$i} {
+				min-height: 1px;
+				width: $column-base-width * $i;
+				padding: 12px;
+
+				@media screen and (max-width: 550px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
